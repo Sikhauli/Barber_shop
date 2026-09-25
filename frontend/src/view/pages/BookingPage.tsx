@@ -418,7 +418,9 @@ export function BookingPage() {
                     inputMode="tel"
                     autoComplete="tel"
                     required
-                    pattern="[+0-9 ()\-]{7,25}"
+                    minLength={7}
+                    maxLength={25}
+                    placeholder="+27 71 234 5678"
                     className="h-11 rounded-xl border border-white/10 bg-ink/60 px-4 text-body text-cream focus:border-brass focus:outline-none"
                   />
                 </label>

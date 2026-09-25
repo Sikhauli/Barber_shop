@@ -3,8 +3,6 @@ import type { Booking } from "../model/types";
 const SHOP_LOCATION = "24 Keyes Avenue, Rosebank, Johannesburg, 2196";
 const SHOP_TZ = "Africa/Johannesburg";
 
-const pad = (n: number) => String(n).padStart(2, "0");
-
 /** Format a local date + time as a floating ICS/Google basic stamp. */
 function basicStamp(dateISO: string, time: string): string {
   const [y, m, d] = dateISO.split("-");

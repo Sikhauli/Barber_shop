@@ -1,0 +1,5 @@
+require('dotenv').config();const express=require('express');const cors=require('cors');const helmet=require('helmet');const morgan=require('morgan');const rateLimit=require('express-rate-limit');const connectDB=require('./config/db');const routes=require('./routes');const {notFound,errorHandler}=require('./middleware/error');
+const app=express();
+app.set('trust proxy',1);app.use(helmet());app.use(cors({origin:(origin,cb)=>{if(!origin)return cb(null,true);const allowed=(process.env.CLIENT_URL||'http://localhost:5173').split(',').map(x=>x.trim());cb(null,allowed.includes(origin)?origin:false)},credentials:true}));app.use(express.json({limit:'100kb'}));app.use(morgan(process.env.NODE_ENV==='production'?'combined':'dev'));app.use(rateLimit({windowMs:15*60*1000,max:300,standardHeaders:true,legacyHeaders:false}));app.use('/api',routes);app.use(notFound);app.use(errorHandler);
+const port=process.env.PORT||3000;
+connectDB().then(()=>app.listen(port,()=>console.log(`Iron & Oak API running on http://localhost:${port}`))).catch(err=>{console.error('Database connection failed:',err.message);process.exit(1)});

@@ -1,0 +1,23 @@
+{
+    "name": "Iron & Oak Barbershop",
+    "short_name": "Iron & Oak",
+    "description": "Considered cuts, clean craft. Book your next appointment in Rosebank, Johannesburg.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#0E0E10",
+    "background_color": "#0E0E10",
+    "categories": ["lifestyle", "beauty", "business"],
+    "lang": "en-ZA",
+    "dir": "ltr",
+    "icons": [
+      { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+      { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+      { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    ],
+    "shortcuts": [
+      { "name": "Book Now", "url": "/booking", "description": "Start a booking" },
+      { "name": "Services", "url": "/services", "description": "View services & pricing" }
+    ]
+  }

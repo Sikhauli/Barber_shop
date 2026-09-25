@@ -1,0 +1,15 @@
+# Iron & Oak Barbershop
+User-agent: *
+Allow: /
+Disallow: /booking?*           # avoid indexing in-progress draft URLs
+Disallow: /*?ref=
+
+# Sitemap
+Sitemap: https://iron-oak.example/sitemap.xml
+
+# Crawl hygiene
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
